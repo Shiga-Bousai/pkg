@@ -1,3 +1,4 @@
+from ast import Num
 import requests
 
 import sys
@@ -31,3 +32,12 @@ def tweet(content, mediaIDs=None, replyID=None):
     json_response = response.json()
     print(json_response)
     return json_response
+
+def tweetThread(contents):
+    reply = Num
+    returnJson = tweet(contents[0])
+    reply = returnJson["data"]["id"]
+    contents.pop(0)
+    for content in contents:
+        returnJson = tweet(content, replyID=reply)
+        reply = returnJson["data"]["id"]
