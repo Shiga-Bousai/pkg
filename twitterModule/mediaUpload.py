@@ -20,8 +20,8 @@ def INITMedia(filePath,fileType):
     req_body = {
         'command':'INIT',
         'total_bytes' : file_size,
-        'media_type': fileType[fileTypeDict][1],
-        'media_category' : fileType[fileTypeDict][0]
+        'media_type': fileTypeDict[fileType][1],
+        'media_category' : fileTypeDict[fileType][0]
     }
     response = requests.post(
         apiEndPoint,
