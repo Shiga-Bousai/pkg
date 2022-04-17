@@ -15,10 +15,10 @@ TWITTER_ACCESS_TOKEN_SECRET=""
 ```
 
 ### 関連ファイル
-twitterModule
-˪mediaUpload.py
-  メディアアップロードに特化したプログラムです。
-˪twitterOAuth1.py
+twitterModule  
+˪mediaUpload.py  
+  メディアアップロードに特化したプログラムです。  
+˪twitterOAuth1.py  
   認証のために使用します。
   
 ### インストール物 作者環境
