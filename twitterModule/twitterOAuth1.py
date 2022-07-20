@@ -1,13 +1,14 @@
 from requests_oauthlib import OAuth1
 from os.path import dirname, abspath
+from os import getenv
+from dotenv import load_dotenv
+
 
 def oath():
     baseDir = dirname(abspath(__file__))
-    
-    from os import getenv
-    from dotenv import load_dotenv
+
     load_dotenv(verbose=True)
-    load_dotenv(f'{baseDir}/.env_s')
+    load_dotenv(f"{baseDir}/.env_s")
 
     CONSUMER_KEY = getenv("TWITTER_API_KEY")
     CONSUMER_SECRET = getenv("TWITTER_API_SECRET")
