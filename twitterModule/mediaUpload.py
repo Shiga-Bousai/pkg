@@ -25,7 +25,7 @@ def INITMedia(filePath, fileType):
         "media_category": fileTypeDict[fileType][0],
     }
     response = requests.post(apiEndPoint, files=req_body, auth=oauth)
-    resJson = response.json
+    resJson = response.json()
     print("INIT :", response.status_code, response.text)
     return resJson["media_id_string"]
 
@@ -54,7 +54,7 @@ def STATUSMedia(mediaID):
     processPercent = 0
     while processPercent < 100:
         response = requests.get(apiEndPoint, params=request_params, auth=oauth)
-        res = response.json
+        res = response.json()
         processPercent = res["processing_info"]["progress_percent"]
         print("STATUS :", res, processPercent)
         time.sleep(1)
@@ -84,7 +84,7 @@ def uploadImage(filePath):
     req_files = {"media": data}
     response = requests.post(apiEndPoint, files=req_files, auth=oauth)
     uploadFile.close()
-    res = response.json
+    res = response.json()
     print(response.status_code, response.text, res["media_id_string"])
     mediaID = res["media_id_string"]
     print(mediaID)
